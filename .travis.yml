@@ -1,0 +1,113 @@
+os: linux
+jobs:
+  include:
+    - dist: jammy
+      virt: lxd
+      before_install:
+        - sudo apt-get install -qq unixodbc unixodbc-dev
+      install:
+        - cpanm --installdeps .
+      language: perl
+      perl:
+        - "5.36"
+        - "5.30"
+      arch: amd64
+      script:
+        - perl hello_world.pl
+    - dist: jammy
+      virt: vm
+      before_install:
+        - sudo apt-get install -qq unixodbc unixodbc-dev
+      install:
+        - cpanm --installdeps .
+      language: perl
+      perl:
+        - "5.36"
+        - "5.30"
+      arch: amd64
+      script:
+        - perl hello_world.pl
+    - dist: xenial
+      virt: vm
+      before_install:
+        - sudo apt-get install -qq unixodbc unixodbc-dev
+      install:
+        - cpanm --installdeps .
+      language: perl
+      perl:
+        - "5.30"
+        - "5.28"
+        - "5.26"
+      arch: amd64
+      script:
+        - perl hello_world.pl
+    - dist: xenial
+      virt: lxd
+      before_install:
+        - sudo apt-get install -qq unixodbc unixodbc-dev
+      install:
+        - cpanm --installdeps .
+      language: perl
+      perl:
+        - "5.30"
+        - "5.28"
+        - "5.26"
+      arch: amd64
+      script:
+        - perl hello_world.pl
+    - dist: bionic
+      virt: lxd
+      before_install:
+        - sudo apt-get install -qq unixodbc unixodbc-dev
+      install:
+        - cpanm --installdeps .
+      language: perl
+      perl:
+        - "5.30"
+        - "5.28"
+        - "5.26"
+      arch: amd64
+      script:
+        - perl hello_world.pl
+    - dist: bionic
+      virt: vm
+      before_install:
+        - sudo apt-get install -qq unixodbc unixodbc-dev
+      install:
+        - cpanm --installdeps .
+      language: perl
+      perl:
+        - "5.30"
+        - "5.28"
+        - "5.26"
+      arch: amd64
+      script:
+        - perl hello_world.pl
+    - dist: focal
+      virt: lxd
+      before_install:
+        - sudo apt-get install -qq unixodbc unixodbc-dev
+      install:
+        - cpanm --installdeps .
+      language: perl
+      perl:
+        - "5.30"
+        - "5.28"
+        - "5.26"
+      arch: amd64
+      script:
+        - perl hello_world.pl
+    - dist: focal
+      virt: vm
+      before_install:
+        - sudo apt-get install -qq unixodbc unixodbc-dev
+      install:
+        - cpanm --installdeps .
+      language: perl
+      perl:
+        - "5.30"
+        - "5.28"
+        - "5.26"
+      arch: amd64
+      script:
+        - perl hello_world.pl
